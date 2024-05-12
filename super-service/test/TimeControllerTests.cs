@@ -21,7 +21,7 @@ namespace SuperService.UnitTests
       var time = controller.Get();
 
       Assert.That(time, Is.EqualTo(now));
-      Assert.That(true, Is.EqualTo(false), "oops!");
+      //Assert.That(true, Is.EqualTo(false), "oops!");
     }
   }
 }
