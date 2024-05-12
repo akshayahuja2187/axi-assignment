@@ -15,7 +15,7 @@ jobs:
       with:
         dotnet-version: '6.0.x'  # Update with your desired .NET version
 
-    - name: Restore dependencies
+    - name: Restore dependencies using dotnet restore
       run: dotnet restore
 
     - name: Run tests
