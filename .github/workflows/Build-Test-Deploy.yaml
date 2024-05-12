@@ -15,11 +15,14 @@ jobs:
       with:
         dotnet-version: '3.1.x'  # Update with your desired .NET version
 
+    - name: Restore dependencies using dotnet restore
+      run: dotnet restore super-service/src/SuperService.csproj
+      
     - name: Run tests
       run: dotnet test super-service/test/SuperService.UnitTests.csproj
 
     - name: Build and publish
-      run: dotnet publish -c Release -o out
+      run: dotnet publish super-service/src/SuperService.csproj -c Release -o out
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3.1.0
