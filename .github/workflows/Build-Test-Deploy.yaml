@@ -16,10 +16,10 @@ jobs:
         dotnet-version: '6.0.x'  # Update with your desired .NET version
 
     - name: Restore dependencies using dotnet restore
-      run: dotnet restore
+      run: dotnet restore super-service/src/SuperService.csproj
 
     - name: Run tests
-      run: dotnet test
+      run: dotnet test super-service/test/SuperService.UnitTests.csproj
 
     - name: Build and publish
       run: dotnet publish -c Release -o out
