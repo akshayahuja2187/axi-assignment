@@ -33,8 +33,7 @@ jobs:
     - name: Build Docker image
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/mysuperservice-image:latest . 
 
-    - name: Push Docker image to registry (optional)
-      if: ${{ secrets.DOCKER_HUB_USERNAME }}
+    - name: Push Docker image to registry
       run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/mysuperservice-image:latest
 
   deploy-to-local:  # This job is for demo purposes only
