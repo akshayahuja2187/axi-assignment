@@ -11,12 +11,9 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Use .NET Core sdk
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '6.0.x'  # Update with your desired .NET version
-
-    - name: Restore dependencies using dotnet restore
-      run: dotnet restore super-service/src/SuperService.csproj
+        dotnet-version: '3.1.x'  # Update with your desired .NET version
 
     - name: Run tests
       run: dotnet test super-service/test/SuperService.UnitTests.csproj
